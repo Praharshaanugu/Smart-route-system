@@ -1,3 +1,18 @@
-.venv
-.exe
+# Virtual environment
+.venv/
 
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Compiled files
+*.exe
+*.out
+*.o
+
+# Logs & temp
+*.log
+*.txt
