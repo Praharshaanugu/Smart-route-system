@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Travel Planner</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            text-align: center;
+            padding: 50px;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            margin: auto;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input, select, button {
+            width: 90%;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: #4facfe;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2> Smart Travel Planner</h2>
+
+    <form id="travelForm">
+        <input type="text" placeholder="Source City" id="source" required>
+        <input type="text" placeholder="Destination City" id="destination" required>
+
+        <input type="number" placeholder="Budget (0 = no limit)" id="budget">
+
+        <select id="choice">
+            <option value="1">Minimum Cost</option>
+            <option value="2">Minimum Distance</option>
+            <option value="3">Minimum Time</option>
+        </select>
+
+        <input type="text" placeholder="Avoid City (or NONE)" id="avoid">
+
+        <button type="submit">Find Routes</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script>
+document.getElementById("travelForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let src = document.getElementById("source").value;
+    let dest = document.getElementById("destination").value;
+    let budget = document.getElementById("budget").value;
+    let choice = document.getElementById("choice").value;
+    let avoid = document.getElementById("avoid").value;
+    document.getElementById("result").innerHTML = `
+        <h3>Input Received:</h3>
+        Source: ${src} <br>
+        Destination: ${dest} <br>
+        Budget: ${budget} <br>
+        Choice: ${choice} <br>
+        Avoid: ${avoid}
+        <br><br>
+        <b> Backend connection needed for real results</b>
+    `;
+});
+</script>
+
+</body>
+</html>

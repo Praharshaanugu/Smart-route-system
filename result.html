@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Results</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f4f4;
+            text-align: center;
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 70%;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background: #4facfe;
+            color: white;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2> Smart Travel Results</h2>
+
+<table>
+    <tr>
+        <th>Route</th>
+        <th>Cost</th>
+    </tr>
+
+    {% for route, cost in routes %}
+    <tr>
+        <td>{{ route }}</td>
+        <td>{{ cost }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="/">⬅ Go Back</a>
+
+</body>
+</html>
